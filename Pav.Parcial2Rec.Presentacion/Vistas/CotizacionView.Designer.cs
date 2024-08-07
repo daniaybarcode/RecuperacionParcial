@@ -67,7 +67,7 @@
             btnIniciarCotizaciones.TabIndex = 2;
             btnIniciarCotizaciones.Text = "Iniciar Cotizaciones";
             btnIniciarCotizaciones.UseVisualStyleBackColor = true;
-            btnIniciarCotizaciones.Click += btnIniciarCotizaciones_Click;
+            btnIniciarCotizaciones.Click += btnAgregarCotizacion_Click;
             // 
             // btnDetenerCotizaciones
             // 
@@ -156,7 +156,7 @@
             label1.Size = new Size(120, 15);
             label1.TabIndex = 5;
             label1.Text = "Prueba del Simulador";
-            label1.Click += label1_Click;
+            //label1.Click += label1_Click;
             // 
             // button1
             // 
@@ -167,7 +167,7 @@
             button1.TabIndex = 8;
             button1.Text = "Probar el simulador";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+           // button1.Click += button1_Click;
             // 
             // CotizacionView
             // 

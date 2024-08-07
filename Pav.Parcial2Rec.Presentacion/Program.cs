@@ -11,6 +11,7 @@ using Pav.Parcial2Rec.Infraestructura.Datos;
 using Pav.Parcial2Rec.Dominio.Repositorios;
 using Pav.Parcial2Rec.Infraestructura.Datos.Repositorios;
 using Pav.Parcial2.Infraestructura.Datos;
+using Pav.Parcial2Rec.Dominio.Servicios;
 
 namespace Pav.Parcial2Rec.Presentacion
 {
@@ -35,6 +36,7 @@ namespace Pav.Parcial2Rec.Presentacion
                     options.UseSqlServer(PavParcial2Context.CadenaDeConexion);
                 })
                 .AddSingleton<Navigator>()
+                .AddSingleton<SimulacionService>()
                 .AddTransient<IPrincipalView, PrincipalView>()
                 .AddTransient<IHistorialView, HistorialView>()
                 .AddTransient<ICotizacionView, CotizacionView>()
