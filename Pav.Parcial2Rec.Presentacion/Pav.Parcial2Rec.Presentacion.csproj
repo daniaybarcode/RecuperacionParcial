@@ -35,7 +35,7 @@
 
   <ItemGroup>
     <Reference Include="SimuladorCotizacion">
-      <HintPath>..\..\..\..\Downloads\PAV2024_Parcial_II_Rec_2\PAV2024_Parcial_II_Rec_2\SimuladorCotizacion.dll</HintPath>
+      <HintPath>..\Pav.Parcial2Rec.Dominio\Servicios\SimuladorCotizacion.dll</HintPath>
     </Reference>
   </ItemGroup>
 
