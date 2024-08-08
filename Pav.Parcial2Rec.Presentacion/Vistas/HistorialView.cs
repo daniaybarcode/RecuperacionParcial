@@ -25,6 +25,8 @@ namespace Pav.Parcial2Rec.Presentacion.Vistas
                 r.FechaHoraFin,
                 r.ValorMaximo,
                 r.ValorMinimo,
+                r.PromedioCotizaciones,
+ 
                 CantidadCotizaciones = r.Cotizaciones.Count
             }).ToList();
         }

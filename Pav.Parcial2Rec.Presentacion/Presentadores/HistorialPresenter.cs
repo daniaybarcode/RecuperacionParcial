@@ -26,6 +26,8 @@ namespace Pav.Parcial2Rec.Presentacion.Presentadores
                     Registro = registro,
                     ValorMaximo = registro.Cotizaciones.Any() ? registro.Cotizaciones.Max(c => c.Valor) : 0,
                     ValorMinimo = registro.Cotizaciones.Any() ? registro.Cotizaciones.Min(c => c.Valor) : 0,
+                    PromedioCotizaciones = registro.Cotizaciones.Any() ? registro.Cotizaciones.Average(c => c.Valor) : 0,
+
                     CantidadCotizaciones = registro.Cotizaciones.Count
                 })
                 .ToList();
@@ -36,6 +38,7 @@ namespace Pav.Parcial2Rec.Presentacion.Presentadores
                 FechaHoraInicio = r.Registro.FechaHoraInicio,
                 FechaHoraFin = r.Registro.FechaHoraFin,
                 Cotizaciones = r.Registro.Cotizaciones,
+                //PromedioCotizaciones= r.PromedioCotizaciones,
                // ValorMaximo = r.ValorMaximo,
               //  ValorMinimo = r.ValorMinimo
             }).ToList();

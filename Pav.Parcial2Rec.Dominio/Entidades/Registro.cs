@@ -15,6 +15,7 @@ namespace Pav.Parcial2Rec.Dominio.Entidades
         public decimal ValorMaximo => Cotizaciones.Any() ? Cotizaciones.Max(c => c.Valor) : 0;
 
         public decimal ValorMinimo => Cotizaciones.Any() ? Cotizaciones.Min(c => c.Valor) : 0;
+        public decimal PromedioCotizaciones => Cotizaciones.Any() ? Cotizaciones.Average(c => c.Valor) : 0;
 
 
     }
