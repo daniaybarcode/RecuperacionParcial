@@ -12,7 +12,7 @@ namespace Pav.Parcial2Rec.Dominio.Servicios
 
         public SimulacionService()
         {
-            _timer = new Timer(1000); // 1 segundo
+            _timer = new Timer(1000);
             _timer.Elapsed += OnTimedEvent;
             _random = new Random();
         }

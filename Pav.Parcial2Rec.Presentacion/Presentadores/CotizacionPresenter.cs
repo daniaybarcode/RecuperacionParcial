@@ -2,7 +2,7 @@
 using Pav.Parcial2Rec.Dominio.Repositorios;
 using Pav.Parcial2Rec.Presentacion.Interfaces;
 using Pav.Parcial2Rec.Presentacion.Tareas;
-using Pav.Parcial2Rec.Dominio.Servicios;
+using SimuladorCotizacion;
 using System;
 
 namespace Pav.Parcial2Rec.Presentacion.Presentadores
@@ -11,20 +11,20 @@ namespace Pav.Parcial2Rec.Presentacion.Presentadores
     {
         private readonly IRepositorio<Registro> _repositorio;
         private readonly IRepositorio<Cotizacion> _repositorioCotizacion;
-        private readonly SimulacionService _simulacionService;
+        private readonly Simulador _simulador;
         private Registro _registroActual;
 
-        public CotizacionPresenter(ICotizacionView vista, IRepositorio<Registro> repositorio, IRepositorio<Cotizacion> repositorioCotizacion, SimulacionService simulacionService) : base(vista)
+        public CotizacionPresenter(ICotizacionView vista, IRepositorio<Registro> repositorio, IRepositorio<Cotizacion> repositorioCotizacion) : base(vista)
         {
             _repositorio = repositorio;
             _repositorioCotizacion = repositorioCotizacion;
-            _simulacionService = simulacionService;
-            _simulacionService.CotizacionModificada += SimulacionService_CotizacionModificada;
+            _simulador = Simulador.Cotizacion;
+            _simulador.CotizacionModificada += Simulador_CotizacionModificada;
         }
 
         public void IniciarSimulacion()
         {
-            _simulacionService.Conectar();
+            _simulador.Conectar(2); 
             _registroActual = new Registro
             {
                 FechaHoraInicio = DateTime.Now,
@@ -34,17 +34,16 @@ namespace Pav.Parcial2Rec.Presentacion.Presentadores
 
         public void DetenerSimulacion()
         {
-            _simulacionService.Desconectar();
+            _simulador.Desconectar();
         }
 
-        private void SimulacionService_CotizacionModificada(double cotizacion)
+        private void Simulador_CotizacionModificada(double cotizacion)
         {
             Vista.Invoke(new Action(() => ActualizarVistaConCotizacion(cotizacion)));
         }
 
         private void ActualizarVistaConCotizacion(double cotizacion)
         {
-            // Lógica para actualizar la vista con la nueva cotización
             Vista.MostrarCotizacion(cotizacion);
 
             var nuevaCotizacion = new Cotizacion
@@ -77,7 +76,7 @@ namespace Pav.Parcial2Rec.Presentacion.Presentadores
             base.Dispose(disposing);
             if (disposing)
             {
-                _simulacionService.CotizacionModificada -= SimulacionService_CotizacionModificada;
+                _simulador.CotizacionModificada -= Simulador_CotizacionModificada;
             }
         }
     }

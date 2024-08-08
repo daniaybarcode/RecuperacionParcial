@@ -1,14 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing; // Asegúrate de importar el espacio de nombres para el manejo de colores.
-using System.Windows.Forms;
-using Pav.Parcial2Rec.Presentacion.Vistas;
-using Pav.Parcial2Rec.Presentacion.Interfaces;
-using Pav.Parcial2Rec.Presentacion.Presentadores;
-using SimuladorCotizacion;
-using Pav.Parcial2Rec.Dominio.Entidades;
-
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Pav.Parcial2Rec.Dominio.Entidades;
@@ -42,7 +32,7 @@ namespace Pav.Parcial2Rec.Presentacion.Vistas
                 FechaHora = DateTime.Now,
                 Valor = (decimal)_ultimaCotizacion
             };
-            cotizacionControl.Location = new System.Drawing.Point(0, panel.Controls.Count * cotizacionControl.Height);
+            cotizacionControl.Location = new Point(0, panel.Controls.Count * cotizacionControl.Height);
 
             if (_ultimaCotizacion > _maxCotizacion)
             {
@@ -53,7 +43,7 @@ namespace Pav.Parcial2Rec.Presentacion.Vistas
 
                 _maxCotizacion = _ultimaCotizacion;
                 _maxCotizacionControl = cotizacionControl;
-                _maxCotizacionControl.BackColor = System.Drawing.Color.Red;
+                _maxCotizacionControl.BackColor = Color.Red;
                 lblMaxCotizacion.Text = $"Máxima Cotización: {_maxCotizacion}";
             }
 
@@ -66,7 +56,7 @@ namespace Pav.Parcial2Rec.Presentacion.Vistas
 
                 _minCotizacion = _ultimaCotizacion;
                 _minCotizacionControl = cotizacionControl;
-                _minCotizacionControl.BackColor = System.Drawing.Color.Yellow;
+                _minCotizacionControl.BackColor = Color.Yellow;
                 lblMinCotizacion.Text = $"Mínima Cotización: {_minCotizacion}";
             }
 
