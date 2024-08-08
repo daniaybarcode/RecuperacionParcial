@@ -49,6 +49,10 @@ namespace Pav.Parcial2Rec.Presentacion.Presentadores
         public void DetenerSimulacion()
         {
             _simulador.Desconectar();
+            _registroActual.FechaHoraFin = DateTime.Now;
+
+            // Actualiza el registro en el repositorio
+            ActualizarRegistro(_registroActual);
         }
 
         private void Simulador_CotizacionModificada(double cotizacion)
@@ -91,6 +95,7 @@ namespace Pav.Parcial2Rec.Presentacion.Presentadores
                 // Si no es ni máximo ni mínimo, solo agregar el control
                 Vista.Panel.Controls.Add(nuevoControl);
             }
+            Vista.ActualizarCotizacionActual(cotizacion);
 
             var nuevaCotizacion = new Cotizacion
             {
@@ -111,7 +116,7 @@ namespace Pav.Parcial2Rec.Presentacion.Presentadores
                 BackColor = SystemColors.Control
             };
 
-            // Posicionar el nuevo control
+ 
             cotizacionControl.Location = new Point(0, Vista.Panel.Controls.Count * cotizacionControl.Height);
             Vista.Panel.Controls.Add(cotizacionControl);
             cotizacionControl.BringToFront(); // Asegura que el nuevo control se muestre sobre otros controles

@@ -37,10 +37,6 @@ namespace Pav.Parcial2Rec.Presentacion.Vistas
             {
                 cotizacionControl.BackColor = Color.Yellow;
             }
-            else
-            {
-                cotizacionControl.BackColor = SystemColors.Control;
-            }
 
             panel.Controls.Add(cotizacionControl);
             ActualizarLabelCotizacionActual();
@@ -54,6 +50,12 @@ namespace Pav.Parcial2Rec.Presentacion.Vistas
         public void ActualizarMinimaCotizacion(double minCotizacion)
         {
             lblMinCotizacion.Text = $"Mínima Cotización: {minCotizacion}";
+        }
+
+        public void ActualizarCotizacionActual(double cotizacion) // Implementar este método
+        {
+            _ultimaCotizacion = cotizacion;
+            ActualizarLabelCotizacionActual();
         }
 
         private void ActualizarLabelCotizacionActual()

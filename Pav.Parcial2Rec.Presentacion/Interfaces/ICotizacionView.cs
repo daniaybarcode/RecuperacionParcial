@@ -18,5 +18,7 @@ namespace Pav.Parcial2Rec.Presentacion.Interfaces
         void MostrarCotizacion(double cotizacion, bool esMaxima, bool esMinima);
         void ActualizarMaximaCotizacion(double maxCotizacion);
         void ActualizarMinimaCotizacion(double minCotizacion);
+        void ActualizarCotizacionActual(double cotizacion);
+
     }
 }
