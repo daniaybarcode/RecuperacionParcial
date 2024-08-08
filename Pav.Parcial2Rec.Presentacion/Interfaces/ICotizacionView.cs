@@ -15,6 +15,8 @@ namespace Pav.Parcial2Rec.Presentacion.Interfaces
         Panel Panel { get; }
 
         void Invoke(Action action);
-        void MostrarCotizacion(double cotizacion);
+        void MostrarCotizacion(double cotizacion, bool esMaxima, bool esMinima);
+        void ActualizarMaximaCotizacion(double maxCotizacion);
+        void ActualizarMinimaCotizacion(double minCotizacion);
     }
 }

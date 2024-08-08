@@ -10,11 +10,6 @@ namespace Pav.Parcial2Rec.Presentacion.Vistas
     public partial class CotizacionView : CotizacionViewWithPresenter, ICotizacionView
     {
         private double _ultimaCotizacion;
-        private double _maxCotizacion = double.MinValue;
-        private double _minCotizacion = double.MaxValue;
-
-        private CotizacionControl _maxCotizacionControl;
-        private CotizacionControl _minCotizacionControl;
 
         public CotizacionView()
         {
@@ -23,7 +18,7 @@ namespace Pav.Parcial2Rec.Presentacion.Vistas
 
         public Panel Panel => panel;
 
-        public void MostrarCotizacion(double cotizacion)
+        public void MostrarCotizacion(double cotizacion, bool esMaxima, bool esMinima)
         {
             _ultimaCotizacion = cotizacion;
 
@@ -34,33 +29,36 @@ namespace Pav.Parcial2Rec.Presentacion.Vistas
             };
             cotizacionControl.Location = new Point(0, panel.Controls.Count * cotizacionControl.Height);
 
-            if (_ultimaCotizacion > _maxCotizacion)
+            if (esMaxima)
             {
-                if (_maxCotizacionControl != null)
-                {
-                    _maxCotizacionControl.BackColor = SystemColors.Control;
-                }
-
-                _maxCotizacion = _ultimaCotizacion;
-                _maxCotizacionControl = cotizacionControl;
-                _maxCotizacionControl.BackColor = Color.Red;
-                lblMaxCotizacion.Text = $"Máxima Cotización: {_maxCotizacion}";
+                cotizacionControl.BackColor = Color.Red;
             }
-
-            if (_ultimaCotizacion < _minCotizacion)
+            else if (esMinima)
             {
-                if (_minCotizacionControl != null)
-                {
-                    _minCotizacionControl.BackColor = SystemColors.Control;
-                }
-
-                _minCotizacion = _ultimaCotizacion;
-                _minCotizacionControl = cotizacionControl;
-                _minCotizacionControl.BackColor = Color.Yellow;
-                lblMinCotizacion.Text = $"Mínima Cotización: {_minCotizacion}";
+                cotizacionControl.BackColor = Color.Yellow;
+            }
+            else
+            {
+                cotizacionControl.BackColor = SystemColors.Control;
             }
 
             panel.Controls.Add(cotizacionControl);
+            ActualizarLabelCotizacionActual();
+        }
+
+        public void ActualizarMaximaCotizacion(double maxCotizacion)
+        {
+            lblMaxCotizacion.Text = $"Máxima Cotización: {maxCotizacion}";
+        }
+
+        public void ActualizarMinimaCotizacion(double minCotizacion)
+        {
+            lblMinCotizacion.Text = $"Mínima Cotización: {minCotizacion}";
+        }
+
+        private void ActualizarLabelCotizacionActual()
+        {
+            lblCotizacionActual.Text = $"Cotización Actual: {_ultimaCotizacion}";
         }
 
         private void btnAgregarCotizacion_Click(object sender, EventArgs e)
@@ -71,6 +69,14 @@ namespace Pav.Parcial2Rec.Presentacion.Vistas
         private void btnDetenerCotizaciones_Click(object sender, EventArgs e)
         {
             Presentador.DetenerSimulacion();
+        }
+
+        private void panel_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 
