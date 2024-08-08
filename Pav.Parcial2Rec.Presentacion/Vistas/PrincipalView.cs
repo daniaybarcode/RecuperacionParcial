@@ -23,13 +23,18 @@ namespace Pav.Parcial2Rec.Presentacion.Vistas
             remove { historialToolStripMenuItem.Click -= value; }
         }
 
-        public event EventHandler VerTablaCotizacionesClicked
-        {
-            add { tablaDeCotizacionesToolStripMenuItem.Click += value; }
-            remove { tablaDeCotizacionesToolStripMenuItem.Click -= value; }
-        }
+        //public event EventHandler VerTablaCotizacionesClicked
+        //{
+        //    add { tablaDeCotizacionesToolStripMenuItem.Click += value; }
+        //    remove { tablaDeCotizacionesToolStripMenuItem.Click -= value; }
+        //}
 
         private void iniciarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PrincipalView_Load(object sender, EventArgs e)
         {
 
         }

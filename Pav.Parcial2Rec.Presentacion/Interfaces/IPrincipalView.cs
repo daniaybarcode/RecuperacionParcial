@@ -10,6 +10,6 @@ namespace Pav.Parcial2Rec.Presentacion.Interfaces
     {
         event EventHandler IniciarCotizacionClicked;
         event EventHandler VerHistorialClicked;
-        event EventHandler VerTablaCotizacionesClicked;
+       // event EventHandler VerTablaCotizacionesClicked;
     }
 }

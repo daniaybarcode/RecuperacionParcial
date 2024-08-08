@@ -13,7 +13,7 @@ namespace Pav.Parcial2Rec.Presentacion.Presentadores
         {
             Vista!.IniciarCotizacionClicked += Vista_IniciarCotizacionClicked;
             Vista.VerHistorialClicked += Vista_VerHistorialClicked;
-            Vista.VerTablaCotizacionesClicked += Vista_VerTablaCotizacionesClicked;
+          //  Vista.VerTablaCotizacionesClicked += Vista_VerTablaCotizacionesClicked;
         }
 
         private void Vista_IniciarCotizacionClicked(object? sender, EventArgs e)

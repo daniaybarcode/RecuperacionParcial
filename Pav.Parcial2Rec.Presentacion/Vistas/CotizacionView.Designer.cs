@@ -35,18 +35,19 @@
             panel.AutoScroll = true;
             panel.BackColor = SystemColors.Control;
             panel.BorderStyle = BorderStyle.FixedSingle;
-            panel.Location = new Point(23, 62);
+            panel.Dock = DockStyle.Fill;
+            panel.Location = new Point(23, 51);
             panel.Name = "panel";
-            panel.Size = new Size(472, 215);
+            panel.Size = new Size(427, 314);
             panel.TabIndex = 0;
             panel.Paint += panel_Paint;
             // 
             // btnIniciarCotizaciones
             // 
             btnIniciarCotizaciones.Anchor = AnchorStyles.None;
-            btnIniciarCotizaciones.Location = new Point(185, 304);
+            btnIniciarCotizaciones.Location = new Point(162, 381);
             btnIniciarCotizaciones.Name = "btnIniciarCotizaciones";
-            btnIniciarCotizaciones.Size = new Size(148, 40);
+            btnIniciarCotizaciones.Size = new Size(148, 37);
             btnIniciarCotizaciones.TabIndex = 2;
             btnIniciarCotizaciones.Text = "Iniciar Cotizaciones";
             btnIniciarCotizaciones.UseVisualStyleBackColor = true;
@@ -55,9 +56,9 @@
             // btnDetenerCotizaciones
             // 
             btnDetenerCotizaciones.Anchor = AnchorStyles.None;
-            btnDetenerCotizaciones.Location = new Point(185, 364);
+            btnDetenerCotizaciones.Location = new Point(162, 424);
             btnDetenerCotizaciones.Name = "btnDetenerCotizaciones";
-            btnDetenerCotizaciones.Size = new Size(148, 41);
+            btnDetenerCotizaciones.Size = new Size(148, 38);
             btnDetenerCotizaciones.TabIndex = 3;
             btnDetenerCotizaciones.Text = "Detener Cotizaciones";
             btnDetenerCotizaciones.UseVisualStyleBackColor = true;
@@ -68,7 +69,7 @@
             lblMaxCotizacion.Anchor = AnchorStyles.Top;
             lblMaxCotizacion.AutoSize = true;
             lblMaxCotizacion.Font = new Font("Segoe UI", 10F);
-            lblMaxCotizacion.Location = new Point(195, 449);
+            lblMaxCotizacion.Location = new Point(173, 497);
             lblMaxCotizacion.Name = "lblMaxCotizacion";
             lblMaxCotizacion.Size = new Size(127, 19);
             lblMaxCotizacion.TabIndex = 5;
@@ -79,7 +80,7 @@
             lblMinCotizacion.Anchor = AnchorStyles.None;
             lblMinCotizacion.AutoSize = true;
             lblMinCotizacion.Font = new Font("Segoe UI", 10F);
-            lblMinCotizacion.Location = new Point(196, 422);
+            lblMinCotizacion.Location = new Point(174, 471);
             lblMinCotizacion.Name = "lblMinCotizacion";
             lblMinCotizacion.Size = new Size(125, 19);
             lblMinCotizacion.TabIndex = 6;
@@ -101,14 +102,14 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.Padding = new Padding(20);
             tableLayoutPanel1.RowCount = 7;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 55.76037F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 3.686636F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15.1898737F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15.443038F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 247F));
-            tableLayoutPanel1.Size = new Size(518, 719);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 5.58083057F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 62.5327873F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 2.05744934F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.477213F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.618499F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 6.366608F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 6.366608F));
+            tableLayoutPanel1.Size = new Size(473, 553);
             tableLayoutPanel1.TabIndex = 7;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
@@ -116,15 +117,15 @@
             // 
             lblCotizacionActual.Anchor = AnchorStyles.None;
             lblCotizacionActual.AutoSize = true;
-            lblCotizacionActual.Location = new Point(240, 32);
+            lblCotizacionActual.Location = new Point(186, 26);
             lblCotizacionActual.Name = "lblCotizacionActual";
-            lblCotizacionActual.Size = new Size(38, 15);
+            lblCotizacionActual.Size = new Size(100, 15);
             lblCotizacionActual.TabIndex = 7;
-            lblCotizacionActual.Text = "label1";
+            lblCotizacionActual.Text = "Cotización Actual";
             // 
             // CotizacionView
             // 
-            ClientSize = new Size(518, 719);
+            ClientSize = new Size(473, 553);
             Controls.Add(tableLayoutPanel1);
             Name = "CotizacionView";
             Text = "Cotización";
